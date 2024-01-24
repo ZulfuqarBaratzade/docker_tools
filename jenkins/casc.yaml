@@ -1,0 +1,9 @@
+jenkins:
+  systemMessage: "Configured by CasC"
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+        - id: "admin"
+          password: "admin"
+  authorizationStrategy: loggedInUsersCanDoAnything
