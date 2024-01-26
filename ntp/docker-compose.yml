@@ -2,7 +2,7 @@ version: '3'
 
 services:
   ntp:
-    image: Dockerfile
+    image: .
     container_name: my-ntp-container
     command: ["chronyd", "-d", "-s"]
     ports:

@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  ansible:
+    image: .
+    container_name: my-ansible-container
+    command: tail -f /dev/null
+    volumes:
+      - ./ansible:/ansible
+    working_dir: /ansible
+    networks:
+      - ansible-net
+
+  target:
+    image: ubuntu:latest
+    container_name: my-target-container
+    command: tail -f /dev/null
+    networks:
+      - ansible-net
+
+networks:
+  ansible-net:
