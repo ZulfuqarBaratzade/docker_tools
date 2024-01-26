@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  ntp:
+    image: Dockerfile
+    container_name: my-ntp-container
+    command: ["chronyd", "-d", "-s"]
+    ports:
+      - "123:123/udp"
+    volumes:
+      - ./chrony.conf:/etc/chrony/chrony.conf
